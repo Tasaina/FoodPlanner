@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="FoodPlanner.Lookup.Lookup"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:FoodPlanner"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Border BorderBrush="DarkGray" BorderThickness="2" CornerRadius="8">
+        <Grid Margin="10">
+            <StackPanel>
+                <Label>Meal Type</Label>
+                <ComboBox Name="MealTypeBox" ItemsSource="{Binding MealTypes}" />
+
+
+                <Label>Meal Size</Label>
+                <ComboBox Name="MealSizeBox" ItemsSource="{Binding MealSizes}" />
+
+
+                <Label>Flavor Profile</Label>
+                <ComboBox Name="FlavorProfileBox" ItemsSource="{Binding FlavorProfiles}" />
+
+                <Label>Temperature</Label>
+                <ComboBox Name="TemperatureBox" ItemsSource="{Binding Temperatures}" />
+
+                <Label>Include Terms</Label>
+                <TextBox Name="IncludeTermsBox" />
+
+                <Label>Exclude Terms</Label>
+                <TextBox Name="ExcludeTermsBox" />
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="4*"/>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <Button Grid.Column="1" Width="250" FontSize="20" x:Name="SearchButton"
+                            Click="SearchButton_OnClick" Content="Search"
+                            Margin="0 20"  />
+                    <Button  Grid.Column="2" x:Name="ResetButton"
+                            Content="Reset" Click="ResetButton_OnClick"
+                            Margin="5 20" />
+                </Grid>
+            </StackPanel>
+        </Grid>
+    </Border>
+
+</UserControl>

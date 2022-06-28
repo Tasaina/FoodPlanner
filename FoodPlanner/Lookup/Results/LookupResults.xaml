@@ -1,0 +1,64 @@
+﻿<Window x:Class="FoodPlanner.Lookup.Results.LookupResults"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FoodPlanner"
+        mc:Ignorable="d"
+        Title="LookupResults" Height="600" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height=".1*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <ItemsControl Margin="30 15 15 15" Grid.ColumnSpan="3" Name="ResultItemsControl">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Border Background="WhiteSmoke" MouseLeftButtonDown="UIElement_OnMouseLeftButtonDown" BorderBrush="DarkGray" BorderThickness="2" Margin="0 0 0 10" CornerRadius="8">
+                        <Grid Margin="10" Name="FoodItemGrid" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width=".5*" />
+                                <ColumnDefinition Width=".1*" />
+                                <ColumnDefinition Width=".1*" />
+                                <ColumnDefinition Width=".1*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid Margin="0" Grid.ColumnSpan="4">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <TextBlock  Name="FoodNameTextBlock"  HorizontalAlignment="Left" Grid.Column="0" FontSize="20"
+                                           Text="{Binding Name}" />
+                                <ItemsControl  Grid.Row="1"  ItemsSource="{Binding Tags}">
+                                    <ItemsControl.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <StackPanel Orientation="Horizontal" />
+                                        </ItemsPanelTemplate>
+                                    </ItemsControl.ItemsPanel>
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Margin="10 0"
+                                                       Text="{Binding }" />
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+        <Button Name="PrevButton" Click="PrevButton_OnClick"  Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="35 5" FontSize="20">Prev</Button>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" FontSize="20"
+                   Name="PageTextBlock" />
+        <Button Name="NextButton" Grid.Column="2" Click="NextButton_OnClick" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Padding="35 5"
+                FontSize="20">
+            Next
+        </Button>
+    </Grid>
+</Window>

@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "b4947784-a587-4e23-ae2d-95381b5f6067": {
+      "ProjectGuid": "b4947784-a587-4e23-ae2d-95381b5f6067",
+      "DisplayName": "FoodPlanner.DataLayer",
+      "ColorIndex": 0
+    },
+    "b97c7736-cc19-4986-a628-bbc32e187de1": {
+      "ProjectGuid": "b97c7736-cc19-4986-a628-bbc32e187de1",
+      "DisplayName": "FoodPlanner.Services",
+      "ColorIndex": 1
+    },
+    "3bc7304c-4027-4ee2-9c40-e6269e49777c": {
+      "ProjectGuid": "3bc7304c-4027-4ee2-9c40-e6269e49777c",
+      "DisplayName": "FoodPlanner",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}
